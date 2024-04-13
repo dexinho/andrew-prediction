@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} container p-2 h-screen`}>{children}</body>
+      <body className={`${inter.className} container m-auto p-2 h-screen`}>{children}</body>
     </html>
   );
 }
