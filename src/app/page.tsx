@@ -1,11 +1,11 @@
-import Order from "@/components/Order";
+import Form from "@/components/Form";
 
 const Home = () => {
   const orderTitle = `Order details`;
 
   return (
     <div className="flex flex-col items-center justify-center border h-full">
-      <Order title={orderTitle} />
+      <Form title={orderTitle} />
     </div>
   );
 };
