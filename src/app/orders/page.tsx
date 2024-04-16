@@ -1,4 +1,5 @@
 import Table from "@/components/Table";
+import createTableRows from "@/utility/createTableRows";
 import { getErrorMessage } from "@/utility/getErrorMessage";
 import supabase from "@/utility/supabaseConnection";
 
@@ -12,17 +13,6 @@ const header = [
   "Expected Delivery",
   "Item",
 ];
-
-type Order = {
-  id: string;
-  company_name: string;
-  quantity: number;
-  ordered_on: string;
-  delivered_on: string;
-  status: string;
-  expected_delivery: string;
-  item: string;
-};
 
 async function fetchAllOrders(): Promise<Order[] | null> {
   try {
@@ -40,18 +30,20 @@ async function fetchAllOrders(): Promise<Order[] | null> {
   }
 }
 
-const createTableRows = (data: Order[] | null) => {
-  let rows: (number | string | null)[][];
-
-  if (data) rows = data.map((obj) => Object.values(obj));
-  else return [];
-
-  return rows;
+type Order = {
+  id: string;
+  company_name: string;
+  quantity: number;
+  ordered_on: string;
+  delivered_on: string;
+  status: string;
+  expected_delivery: string;
+  item: string;
 };
 
 const Order = async () => {
   const data = await fetchAllOrders();
-  const rows = createTableRows(data);
+  const rows = createTableRows<Order>(data);
 
   return (
     <div className=" ">
