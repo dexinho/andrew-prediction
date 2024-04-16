@@ -2,6 +2,7 @@ import Table from "@/components/Table";
 import createTableRows from "@/utility/createTableRows";
 import { getErrorMessage } from "@/utility/getErrorMessage";
 import supabase from "@/utility/supabaseConnection";
+import { Order } from "../../../types/types";
 
 const header = [
   "ID",
@@ -30,18 +31,7 @@ async function fetchAllOrders(): Promise<Order[] | null> {
   }
 }
 
-type Order = {
-  id: string;
-  company_name: string;
-  quantity: number;
-  ordered_on: string;
-  delivered_on: string;
-  status: string;
-  expected_delivery: string;
-  item: string;
-};
-
-const Order = async () => {
+const OrdersPage = async () => {
   const data = await fetchAllOrders();
   const rows = createTableRows<Order>(data);
 
@@ -53,4 +43,4 @@ const Order = async () => {
   );
 };
 
-export default Order;
+export default OrdersPage;

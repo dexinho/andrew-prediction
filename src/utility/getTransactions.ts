@@ -1,14 +1,7 @@
 import { PostgrestResponse } from "@supabase/supabase-js";
 import supabase from "./supabaseConnection";
 import { getErrorMessage } from "./getErrorMessage";
-
-type Transaction = {
-  id: string;
-  order_id: string;
-  timestamp: string;
-  from_state: number;
-  to_state: number;
-};
+import { Transaction } from "../../types/types";
 
 export const getTransactions = async (): Promise<Transaction[] | null> => {
   try {
