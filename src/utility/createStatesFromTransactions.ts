@@ -3,16 +3,16 @@ import { State, Transaction } from "../../types/types";
 export const createStatesFromTransactions = (
   transactions: Transaction[] | null
 ) => {
-  if (!transactions) return [];
+  if (!transactions || transactions.length === 0) return [];
 
   const states: State[] = [
     {
-      transaction_id: transactions[0].id,
+      transaction_id: transactions[0]?.id,
       factory: 1,
       ocean: 0,
       inventory: 0,
       customer: 0,
-      timestamp: transactions[0].timestamp,
+      timestamp: transactions[0]?.timestamp,
     },
   ];
 
