@@ -13,7 +13,7 @@ export const getTransactions = async (): Promise<Transaction[] | null> => {
       throw error;
     }
 
-    console.log("data", data);
+    console.log("data", data.length);
 
     return data;
   } catch (error: unknown) {
