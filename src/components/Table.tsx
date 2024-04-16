@@ -11,7 +11,7 @@ const Table = ({ headers, rows }: TableProps) => {
           {headers.map((header, index) => (
             <th
               key={index}
-              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center"
             >
               {header}
             </th>
@@ -24,7 +24,7 @@ const Table = ({ headers, rows }: TableProps) => {
             {row.map((text, cellIndex) => (
               <td
                 key={cellIndex}
-                className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500"
               >
                 {text}
               </td>
