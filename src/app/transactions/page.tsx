@@ -1,7 +1,7 @@
-const TransactionPage = () => {
+const TransactionsPage = () => {
   return (
     <div>TransactionPage</div>
   )
 }
 
-export default TransactionPage
+export default TransactionsPage
