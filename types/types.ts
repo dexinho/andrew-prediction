@@ -25,3 +25,8 @@ export type State = {
   customer: number;
   timestamp?: string;
 };
+
+export type Navlink = {
+  path: string;
+  title: string;
+};

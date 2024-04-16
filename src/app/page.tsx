@@ -1,13 +1,13 @@
 import Form from "@/components/Form";
 
-const Home = () => {
+const HomePage = () => {
   const orderTitle = `Order details`;
 
   return (
-    <div className="flex flex-col items-center justify-center border h-full">
+    <div>
       <Form title={orderTitle} />
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
