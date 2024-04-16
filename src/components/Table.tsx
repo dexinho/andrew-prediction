@@ -1,6 +1,6 @@
 type TableProps = {
   headers: string[];
-  rows: (number | string)[][];
+  rows: (number | string | null)[][];
 };
 
 const Table = ({ headers, rows }: TableProps) => {
@@ -35,6 +35,5 @@ const Table = ({ headers, rows }: TableProps) => {
     </table>
   );
 };
-
 
 export default Table;
