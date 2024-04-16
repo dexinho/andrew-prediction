@@ -1,5 +1,8 @@
 import Table from "@/components/Table";
+import createTableRows from "@/utility/createTableRows";
 import { getTransactions } from "@/utility/getTransactions";
+import { State } from "../../../types/types";
+import { createStatesFromTransactions } from "@/utility/createStatesFromTransactions";
 
 const tableHeaders = [
   "Transaction_id",
@@ -10,20 +13,15 @@ const tableHeaders = [
   "Timestamp",
 ];
 
-const states = [
-  ["1", 1, 0, 0, 0, "2024-04-16 00:00:00"],
-  ["1", 0, 1, 0, 0, "2024-04-26 00:00:00"],
-  ["1", 0, 0, 1, 0, "2024-05-16 00:00:00"],
-];
-
 const StatesPage = async () => {
   const transactions = await getTransactions();
-  // console.log(transactions);
+  const states = createStatesFromTransactions(transactions);
+  const rows = createTableRows<State>(states);
 
   return (
     <>
       <h1 className="text-center my-4 text-3xl font-bold">STATES</h1>
-      <Table headers={tableHeaders} rows={states} />
+      <Table headers={tableHeaders} rows={rows} />
     </>
   );
 };
