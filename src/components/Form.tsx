@@ -31,6 +31,7 @@ const Form = ({ title }: OrderProps) => {
             type="text"
             placeholder="Company name"
             name="companyName"
+            required
           />
           <input
             className="border p-2 rounded-2xl"
@@ -42,13 +43,31 @@ const Form = ({ title }: OrderProps) => {
             max={10}
             name="quantity"
           />
+          <label htmlFor="orderDate">Order Date:</label>
           <input
             className="border p-2 rounded-2xl"
             type="date"
             value={orderDate}
             onChange={handleFormDateChange}
             name="orderDate"
+            required
           />
+          <label htmlFor="expected-delivery">Expected Delivery Date:</label>
+          <input
+            className="border p-2 rounded-2xl"
+            type="date"
+            value={orderDate}
+            onChange={handleFormDateChange}
+            name="expected-delivery"
+          />
+          <label htmlFor="item">Item:</label>
+          <select
+            name="item"
+            className="text-center mb-6 border p-1 rounded-2xl"
+          >
+            <option value="A">A</option>
+            <option value="B">B</option>
+          </select>
           <Button type="submit" title="CREATE ORDER" />
         </div>
       </form>

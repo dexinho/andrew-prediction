@@ -6,7 +6,7 @@ type ButtonProps = {
 const Button = ({ type, title }: ButtonProps) => {
   return (
     <button
-      className="border h-8 rounded-2xl bg-orange-200 hover:bg-slate-200"
+      className="border h-10 rounded-2xl bg-orange-200 hover:bg-slate-200"
       type={type}
     >
       {title}

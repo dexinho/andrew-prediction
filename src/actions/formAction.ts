@@ -4,6 +4,7 @@ import supabase from "@/utility/supabaseConnection";
 import { revalidatePath } from "next/cache";
 
 export const testForm = async (formData: FormData) => {
+  console.log(FormData);
   const data = {
     factory: 1,
   };
