@@ -1,6 +1,6 @@
 import Table from "@/components/Table";
+import { getErrorMessage } from "@/utility/getErrorMessage";
 import supabase from "@/utility/supabaseConnection";
-import { promises } from "dns";
 
 const header = [
   "ID",
@@ -13,23 +13,45 @@ const header = [
   "Item",
 ];
 
-async function fetchAllOrders() {
-  const { data, error } = await supabase.from("orders").select("*");
+type Order = {
+  id: string;
+  company_name: string;
+  quantity: number;
+  ordered_on: string;
+  delivered_on: string;
+  status: string;
+  expected_delivery: string;
+  item: string;
+};
 
-  if (error) {
-    console.error("Error fetching orders:", error);
+async function fetchAllOrders(): Promise<Order[] | null> {
+  try {
+    const { data, error } = await supabase.from("orders").select("*");
+
+    if (error) throw error;
+
+    console.log("Fetched orders:", data);
+
+    return data;
+  } catch (error) {
+    console.log("Error", getErrorMessage(error));
+
     return null;
   }
-
-  console.log("Fetched orders:", data);
-
-  const result = data.map((obj) => Object.values(obj));
-  console.log(result);
-  return result;
 }
 
+const createTableRows = (data: Order[] | null) => {
+  let rows: (number | string | null)[][];
+
+  if (data) rows = data.map((obj) => Object.values(obj));
+  else return [];
+
+  return rows;
+};
+
 const Order = async () => {
-  const rows = await fetchAllOrders();
+  const data = await fetchAllOrders();
+  const rows = createTableRows(data);
 
   return (
     <div className=" ">
