@@ -6,7 +6,7 @@ import { createStatesFromTransactions } from "@/utility/createStatesFromTransact
 import { makeDateEuropean } from "@/utility/makeDateEuropean";
 
 const tableHeaders = [
-  "Transaction_id",
+  "Transaction id",
   "Factory",
   "Ocean",
   "Inventory",

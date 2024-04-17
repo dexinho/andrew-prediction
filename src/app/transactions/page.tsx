@@ -4,7 +4,7 @@ import createTableRows from "@/utility/createTableRows";
 import Table from "@/components/Table";
 import NewTransaction from "@/components/NewTransaction";
 
-const headers = ["id", "order_id", "date", "from_state", "to_state"];
+const headers = ["id", "order id", "date", "from state", "to state"];
 
 const TransactionsPage = async () => {
   const transactions = await getTransactions();

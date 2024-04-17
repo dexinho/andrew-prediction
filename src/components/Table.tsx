@@ -27,7 +27,9 @@ const Table = ({ title, headers, rows }: TableProps) => {
               {row.map((text, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500"
+                  className={`px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500 ${
+                    rowIndex % 2 ? "bg-slate-200" : "bg-white"
+                  }`}
                 >
                   {text}
                 </td>
