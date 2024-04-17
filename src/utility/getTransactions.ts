@@ -8,13 +8,13 @@ export const getTransactions = async (): Promise<Transaction[] | null> => {
     const { data, error }: PostgrestResponse<Transaction> = await supabase
       .from("transactions")
       .select("*")
-      .limit(100);
+      .limit(98);
 
     if (error) {
       throw error;
     }
 
-    console.log("data", data.length);
+    console.log("data", data);
 
     return data;
   } catch (error: unknown) {

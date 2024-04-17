@@ -12,7 +12,7 @@ export const createStatesFromTransactions = (
       ocean: 0,
       inventory: 0,
       customer: 0,
-      timestamp: transactions[0]?.timestamp,
+      date: transactions[0]?.date,
     },
   ];
 
@@ -51,7 +51,7 @@ export const createStatesFromTransactions = (
       ocean: newOceanState,
       inventory: newInventoryState,
       customer: newCustomerState,
-      timestamp: transaction.timestamp,
+      date: transaction.date,
     });
   });
 

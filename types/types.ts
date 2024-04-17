@@ -12,7 +12,7 @@ export type Order = {
 export type Transaction = {
   id: string;
   order_id: string;
-  timestamp: string;
+  date: string;
   from_state: string;
   to_state: string;
 };
@@ -23,10 +23,16 @@ export type State = {
   ocean: number;
   inventory: number;
   customer: number;
-  timestamp?: string;
+  date?: string;
 };
 
 export type Navlink = {
   path: string;
   title: string;
+};
+
+
+export type DateState = {
+  orderedOn: string;
+  expectedDeliveryDate: string;
 };

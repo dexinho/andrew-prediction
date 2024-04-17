@@ -17,9 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative container flex flex-col items-center justify-center m-auto px-2 h-screen`}>
+      <body
+        className={`${inter.className} relative container m-auto p-4 h-screen`}
+      >
         <Navbar />
-        {children}
+        <main
+          className="relative top-16 pb-4 flex items-center justify-center"
+        >
+          {children}
+        </main>
       </body>
     </html>
   );

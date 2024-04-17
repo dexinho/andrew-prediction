@@ -10,7 +10,7 @@ const tableHeaders = [
   "Ocean",
   "Inventory",
   "Customer",
-  "Timestamp",
+  "Date",
 ];
 
 const StatesPage = async () => {
@@ -18,12 +18,9 @@ const StatesPage = async () => {
   const states = createStatesFromTransactions(transactions);
   const rows = createTableRows<State>(states);
 
-  // console.log(transactions?.length)
-
   return (
     <>
-      <h1 className="text-center my-4 text-3xl font-bold">STATES</h1>
-      <Table headers={tableHeaders} rows={rows} />
+      <Table title={"States"} headers={tableHeaders} rows={rows} />
     </>
   );
 };
