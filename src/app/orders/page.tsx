@@ -20,7 +20,7 @@ const OrdersPage = async () => {
 
   return (
     <div className=" ">
-      <Table title={'Orders'} headers={header} rows={rows}></Table>
+      <Table title={"Orders"} headers={header} rows={rows}></Table>
     </div>
   );
 };

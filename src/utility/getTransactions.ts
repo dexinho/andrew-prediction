@@ -2,18 +2,18 @@ import { PostgrestResponse } from "@supabase/supabase-js";
 import supabase from "./supabaseConnection";
 import { getErrorMessage } from "./getErrorMessage";
 import { Transaction } from "../../types/types";
+import { revalidatePath } from "next/cache";
 
 export const getTransactions = async (): Promise<Transaction[] | null> => {
   try {
     const { data, error }: PostgrestResponse<Transaction> = await supabase
       .from("transactions")
-      .select("*")
-      .limit(98);
+      .select("*");
 
     if (error) {
       throw error;
     }
-
+    revalidatePath("/states");
     console.log("data", data);
 
     return data;

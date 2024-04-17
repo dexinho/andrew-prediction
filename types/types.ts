@@ -3,7 +3,7 @@ export type Order = {
   company_name: string;
   quantity: number;
   ordered_on: string;
-  delivered_on: string;
+  delivered_on: string | null;
   status: string;
   expected_delivery: string;
   item: string;
@@ -30,7 +30,6 @@ export type Navlink = {
   path: string;
   title: string;
 };
-
 
 export type DateState = {
   orderedOn: string;

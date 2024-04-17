@@ -17,7 +17,8 @@ export const orderFormAction = async (formData: FormData) => {
       item,
       expected_delivery_date,
     });
-
+    const test = await supabase.from("orders").select("*").limit(100);
+    console.log("works", test);
     if (error) throw error;
   } catch (error: unknown) {
     getErrorMessage(error);
