@@ -13,7 +13,7 @@ export const getTransactions = async (): Promise<Transaction[] | null> => {
     if (error) {
       throw error;
     }
-    revalidatePath("/states");
+    revalidatePath("/transactions");
     console.log("data", data);
 
     return data;
