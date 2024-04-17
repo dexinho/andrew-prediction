@@ -5,7 +5,7 @@ import { State } from "../../../types/types";
 import { createStatesFromTransactions } from "@/utility/createStatesFromTransactions";
 
 const tableHeaders = [
-  "Transaction_id",
+  "Transaction id",
   "Factory",
   "Ocean",
   "Inventory",
