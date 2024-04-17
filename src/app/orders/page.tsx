@@ -2,6 +2,7 @@ import Table from "@/components/Table";
 import createTableRows from "@/utility/createTableRows";
 import { getOrders } from "@/utility/getOrders";
 import { Order } from "../../../types/types";
+import { makeDateEuropean } from "@/utility/makeDateEuropean";
 
 const header = [
   "ID",
@@ -16,7 +17,8 @@ const header = [
 
 const OrdersPage = async () => {
   const orders = await getOrders();
-  const rows = createTableRows<Order>(orders);
+  const europeanDateOrders = makeDateEuropean(orders)
+  const rows = createTableRows<Order>(europeanDateOrders);
 
   return (
     <div className=" ">

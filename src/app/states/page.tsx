@@ -3,6 +3,7 @@ import createTableRows from "@/utility/createTableRows";
 import { getTransactions } from "@/utility/getTransactions";
 import { State } from "../../../types/types";
 import { createStatesFromTransactions } from "@/utility/createStatesFromTransactions";
+import { makeDateEuropean } from "@/utility/makeDateEuropean";
 
 const tableHeaders = [
   "Transaction_id",
@@ -15,7 +16,8 @@ const tableHeaders = [
 
 const StatesPage = async () => {
   const transactions = await getTransactions();
-  const states = createStatesFromTransactions(transactions);
+  const europeanDateTransactions = makeDateEuropean(transactions)
+  const states = createStatesFromTransactions(europeanDateTransactions);
   const rows = createTableRows<State>(states);
 
   return (
