@@ -35,7 +35,7 @@ const Form = ({ title }: FormProps) => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="border p-4 rounded-2xl">
+        <div className="border p-4 rounded-2xl mt-40">
           <div className="text-xl text-center font-bold mb-4">{title}</div>
           <form action={orderFormAction}>
             <div className="flex flex-col p-2 gap-4">

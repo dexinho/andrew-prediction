@@ -2,7 +2,6 @@ import { getTransactions } from "@/utility/getTransactions";
 import { Transaction } from "../../../types/types";
 import createTableRows from "@/utility/createTableRows";
 import Table from "@/components/Table";
-import Button from "@/components/Button";
 import NewTransaction from "@/components/NewTransaction";
 
 const headers = ["id", "order_id", "date", "from_state", "to_state"];

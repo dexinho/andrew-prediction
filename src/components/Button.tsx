@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
 type ButtonProps = {
   type: "button" | "submit";
   title: string;
   handleButtonClick?: () => void;
+  disabled?: boolean;
 };
 
 const Button = ({ type, title, handleButtonClick }: ButtonProps) => {
-
   return (
     <button
       onClick={handleButtonClick}
