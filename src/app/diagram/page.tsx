@@ -7,8 +7,8 @@ const DiagramPage = () => {
       <h1 className="text-center text-3xl font-bold">Diagram</h1>
       <div className="flex w-full justify-between">
         <div className="relative">
-          {diagramNodes.map((node) => (
-            <DiagramNode node={node} />
+          {diagramNodes.map((node, index) => (
+            <DiagramNode key={index} node={node} />
           ))}
         </div>
         <div className="w-96 h-96 border"></div>
