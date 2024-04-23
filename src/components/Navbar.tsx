@@ -12,7 +12,7 @@ const Navbar = () => {
         height={50}
         priority={true}
       />
-      <div className="grid grid-cols-4">
+      <div className="flex">
         {navlinks.map((link, index) => (
           <Navlink key={index} link={link} />
         ))}
