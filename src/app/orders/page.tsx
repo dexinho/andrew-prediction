@@ -17,11 +17,11 @@ const header = [
 
 const OrdersPage = async () => {
   const orders = await getOrders();
-  const europeanDateOrders = makeDateEuropean(orders)
+  const europeanDateOrders = makeDateEuropean<Order>(orders);
   const rows = createTableRows<Order>(europeanDateOrders);
 
   return (
-    <div className=" ">
+    <div>
       <Table title={"Orders"} headers={header} rows={rows}></Table>
     </div>
   );
