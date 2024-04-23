@@ -1,10 +1,12 @@
-export const makeDateEuropean = (dateData: any[] | null): any[] => {
-  const fixedData: any[] = [];
+export const makeDateEuropean = <T extends Record<string, any>>(
+  dateData: T[] | null
+) => {
+  const fixedData: T[] = [];
 
   if (!dateData) return [];
 
-  dateData.forEach((data: any) => {
-    const prop: any = {};
+  dateData.forEach((data: T) => {
+    const prop = {} as T;
     for (const key in data) {
       if (Object.prototype.hasOwnProperty.call(data, key)) {
         const value = data[key];
