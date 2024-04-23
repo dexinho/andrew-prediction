@@ -9,9 +9,10 @@ import PopupNotification from "./PopupNotification";
 
 type FormProps = {
   title: string;
+  bgColor: string;
 };
 
-const Form = ({ title }: FormProps) => {
+const Form = ({ title, bgColor }: FormProps) => {
   const date = new Date();
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -59,7 +60,7 @@ const Form = ({ title }: FormProps) => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="border p-4 rounded-2xl mt-40">
+        <div className={`border ${bgColor} p-4 rounded-2xl mt-40`}>
           <div className="text-xl text-center font-bold mb-4">{title}</div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col p-2 gap-4">
