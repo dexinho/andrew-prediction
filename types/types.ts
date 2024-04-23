@@ -35,3 +35,12 @@ export type DateState = {
   orderedOn: string;
   expectedDeliveryDate: string;
 };
+
+export type DiagramNodeT = {
+  title: string;
+  textColor: string;
+  bgColor: string;
+  row: number;
+  column: number;
+  arrowDirection?: "top" | "bottom" | "left" | "right";
+};
