@@ -15,4 +15,8 @@ export const navlinks = [
     path: "/states",
     title: "States",
   },
+  {
+    path: "/diagram",
+    title: "Diagram",
+  },
 ];
