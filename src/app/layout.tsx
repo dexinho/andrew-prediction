@@ -21,7 +21,7 @@ export default function RootLayout({
         className={`${inter.className} relative container m-auto p-4 h-screen bg-slate-400`}
       >
         <Navbar />
-        <main className="relative pb-4 flex items-center justify-center">
+        <main className="relative top-16 pb-4 flex items-center justify-center">
           {children}
         </main>
       </body>
