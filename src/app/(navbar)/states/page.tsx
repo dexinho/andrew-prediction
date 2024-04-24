@@ -16,6 +16,7 @@ const tableHeaders = [
 
 const StatesPage = async () => {
   const transactions = await getTransactions();
+  
   const europeanDateTransactions = makeDateEuropean<Transaction>(transactions)
   const states = createStatesFromTransactions(europeanDateTransactions);
   const rows = createTableRows<State>(states);
