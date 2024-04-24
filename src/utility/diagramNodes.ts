@@ -22,7 +22,7 @@ export const diagramNodes: DiagramNodeT[] = [
   {
     title: "Algorithm",
     textColor,
-    bgColor: "#B393E1",
+    bgColor: "#20B0C5",
     row: 2,
     column: 2,
     arrowDirection: "left",
@@ -30,7 +30,7 @@ export const diagramNodes: DiagramNodeT[] = [
   {
     title: "Estimate",
     textColor,
-    bgColor: "#5EC2B7",
+    bgColor: "#B393E1",
     row: 2,
     column: 1,
     arrowDirection: "bottom",
@@ -94,7 +94,7 @@ export const diagramNodes: DiagramNodeT[] = [
   {
     title: "Delivery",
     textColor,
-    bgColor: "#20B0C5",
+    bgColor: "#179ACC",
     row: 6,
     column: 1,
     arrowDirection: "bottom",
