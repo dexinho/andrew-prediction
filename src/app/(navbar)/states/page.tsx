@@ -1,7 +1,7 @@
 import Table from "@/components/Table";
 import createTableRows from "@/utility/createTableRows";
 import { getTransactions } from "@/utility/getTransactions";
-import { State, Transaction } from "../../../types/types";
+import { State, Transaction } from "../../../../types/types";
 import { createStatesFromTransactions } from "@/utility/createStatesFromTransactions";
 import { makeDateEuropean } from "@/utility/makeDateEuropean";
 
